@@ -1,0 +1,59 @@
+POST /api/notes 
+Request:
+{
+"noteText" : "text"
+}
+
+Response:
+{
+"id":"noteId",
+"createdDate": "currentTime"
+}
+Status : 201 (Note Created)
+***************************************************
+
+PATCH /api/notes/{id}
+Request:
+{
+"noteText" : "text"
+}
+
+Response:
+{
+"id":"noteId",
+"updatedDate": "currentTime"
+}
+Status : 200 (Note Updated)
+
+***************************************************
+GET /api/notes
+Sample response body :
+[
+	{"id": "noteId",
+	"noteText" : "text",
+	"createdDate": "currentTime",
+	"updatedDate": "currentTime"
+	},
+	{"id": "noteId",
+	"noteText" : "text",
+	"createdDate": "currentTime",
+	"updatedDate": "currentTime"}
+
+]
+Status: 200
+
+***************************************************
+GET /api/notes/{id}
+
+Response:
+{
+"noteText" : "text",
+"createdDate": "currentTime",
+"updatedDate": "currentTime"
+}
+Status: 200, 404
+
+***************************************************
+
+delete /api/notes/{id}
+Status :204 deleted
